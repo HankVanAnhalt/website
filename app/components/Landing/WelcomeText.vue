@@ -46,7 +46,11 @@ h1 {
     text-wrap: nowrap;
     width: 100%;
     height: 100%;
-    -webkit-text-size-adjust: 100%; // otherwise not scaled up properly on ios safari mobile
+
+    // otherwise not scaled up properly on ios safari mobile
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    
     opacity: 0;
     transform: translateY($animTransY);
     transition: opacity $animSpeedLanding $steepEaseOut,
