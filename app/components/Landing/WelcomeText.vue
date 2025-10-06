@@ -18,7 +18,6 @@ function refitText(){
     if (!textRef.value) return;
     textFit(textRef.value!, {
         alignVert: true,
-        //alignVertWithFlexbox: true,
         maxFontSize: 500
     });
 }
@@ -29,8 +28,8 @@ onMounted(() => {
         refitText();
         textRef.value!.style.opacity = '1';
         textRef.value!.style.transform = 'translateY(0)';
-    })
-    
+    });
+
     window.addEventListener('resize', refitText);
 });
 
@@ -50,7 +49,7 @@ h1 {
     // otherwise not scaled up properly on ios safari mobile
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    
+
     opacity: 0;
     transform: translateY($animTransY);
     transition: opacity $animSpeedLanding $steepEaseOut,

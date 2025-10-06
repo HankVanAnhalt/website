@@ -23,7 +23,12 @@ export default defineNuxtConfig({
     '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@vueuse/nuxt', '@nuxtjs/google-fonts', '@nuxthub/core'
   ],
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
+    prerender: {
+      routes: [
+        '/'
+      ]
+    }
   },
   googleFonts: {
     display: "swap",
@@ -35,14 +40,30 @@ export default defineNuxtConfig({
   image: {
     format: ['avif, webp']
   },
-  ssr: false,
+
+  ssr: true,
+
   app: {
     baseURL: '/website/',
     head: {
-      meta: [{
-        name: 'viewport', 
-        content: 'width=device-width, initial-scale=1.0'
-      }]
+      title: 'HÆNK.',
+      bodyAttrs: {
+        style: 'background-color: black'
+      },
+      meta: [
+        {
+          name: 'viewport', 
+          content: 'width=device-width, initial-scale=1.0'
+        },
+        {
+          name: 'author',
+          content: 'HÆNK'
+        },
+        {
+          name: 'description',
+          content: 'HÆNK | DEVELOPER | MEDIA | DESIGN'
+        }
+      ]
     }
   },
 })
