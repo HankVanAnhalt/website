@@ -14,7 +14,7 @@
 import textFit from 'textfit';
 const textRef = ref<HTMLElement | null>(null);
 
-function refitText(){
+function refitText() {
     if (!textRef.value) return;
     textFit(textRef.value!, {
         alignVert: true,
@@ -39,7 +39,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" scoped>
-
 h1 {
     font-weight: bold;
     text-wrap: nowrap;
@@ -53,10 +52,10 @@ h1 {
     opacity: 0;
     transform: translateY($animTransY);
     transition: opacity $animSpeedLanding $steepEaseOut,
-                transform $animSpeedLanding $steepEaseOut;
+        transform $animSpeedLanding $steepEaseOut;
 }
 
-.welcome-text { // use all available space given by Landing css + relative units can reference this
+.welcome-text {
     height: 100%;
     width: 100%;
 }
@@ -67,8 +66,7 @@ h1 {
 
 .focus-text {
     color: transparent;
-    background: linear-gradient(-45deg, $color1,  $color2);
-    background-size: 100% 100%;
+    background: linear-gradient(-45deg, $color1 10%, $color2 90%);
     background-clip: text;
     animation: colorShift 8s infinite linear;
 }
